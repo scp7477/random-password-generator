@@ -1,0 +1,82 @@
+:root {
+    /* colors */
+    --bg-blue-white: #E7EEFF;
+    --bg-green: #09a409;
+    --bg-light-grey: #f0f0f1;
+    --bg-off-white: #FAFCFF;
+    --bg-white: #ffffff;
+    --bg-black: #000000;
+    --bg-blue: #3a6dbd;
+    --bg-blue-grey: #acc1e8;
+    --border-black-01: rgba(0, 0, 0, 0.1);
+    --border-black: #000000;
+    --border-black-02: rgba(0, 0, 0, 0.2);
+    --shadow-black-01 : rgba(0,0,0,0.1);
+    --tc-blue: #3665AFFF;
+    --tc-white: #ffffff;
+    --tc-light-grey: #9a9a9a;
+    --tc-light-red: #ec9393;
+
+    /* font familys */
+    --ff-base: "Outfit";
+    --ff-example: "Inconsolata";
+
+    /*font weithts */
+    --fw-300: 300;
+    --fw-500: 500;
+}
+
+* {box-sizing: border-box}
+
+body {
+    background-color: var(--bg-blue-white);
+    font-family: var(--ff-base), sans-serif;
+    margin: 0;
+    padding: 15px;
+}
+
+/* --- Typography --- */
+
+h1 {font-size: 40px}
+h4 {}
+a { text-decoration: none; }
+
+.weight300, .sub-heading {
+    font-weight: var(--fw-300);
+}
+
+.font-weight-500 {
+    font-weight: var(--fw-500);
+}
+
+.span-link{
+    color: var(--tc-light-red);
+    font-weight: var(--fw-500);
+}
+
+.align-left {
+    text-align: left;
+}
+
+/* --- Layout --- */
+
+.container {
+    margin: 0 auto;
+    max-width: 550px;
+    text-align: center;
+}
+
+.generator-container {
+    margin-top: 25px;
+}
+
+.settings {
+    background-color: var(--bg-off-white);
+    border-radius: 15px 15px 2px 2px;
+    box-shadow: 0 8px 16px var(--shadow-black-01);
+    padding: 1rem;
+}
+
+.settings-form {
+    margin-bottom: 1rem;
+}

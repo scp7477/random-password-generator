@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Noel Bromkamp">
+	<meta name="description" content="Random Password Generator">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Inconsolata:wght@200..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=VT323&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="styles/main.css">
+	<link rel="stylesheet" href="styles/components.css">
+	<script defer src="app.js"></script>
+	<title>Title</title>
+</head>
+<body>
+<main>
+	<section class="container">
+		<h1>Random Password Generator <br> by Noel</h1>
+		<span class="sub-heading">Generate strong and secure passwords
+			<br> instantly and check for leaks</span>
+		<div class="generator-container">
+			<div class="settings">
+				<fieldset  class="segmented">
+					<legend>Choose password type</legend>
+					<div class="segmented-wrap">
+						<!--RANDOM-->
+						<input type="radio" name="pwtype" id="type-random" value="random">
+						<label for="type-random">
+							<span class="icon"><img src="icon/icons8-random-48.png" alt="random"></span>
+							Random
+						</label>
+						<!--PREFIX-->
+						<input type="radio" name="pwtype" id="type-prefix" value="prefix" checked>
+						<label for="type-prefix">
+							<span class="icon"><img src="icon/icons8-hashtag-50.png" alt="Prefix"></span>
+							Prefix
+						</label>
+					</div>
+				</fieldset>
+				<div class="settings-form">
+					<p class="align-left">Customize your new password</p>
+					<form>
+						<!--Random Mode view-->
+						<div data-mode="random" id="view-random" aria-hidden="false">
+							<div class="length-container">
+								<label for="length">Password Length</label>
+								<div class="slider">
+									<input type="range" id="length" name="length" min="4" max="40"
+										value="10"
+										oninput="lenOutput.value = this.value">
+								</div>
+								<div class="len-output">
+									<output id="lenOutput">10</output>
+								</div>
+							</div>
+							<p class="align-left weight300">Character Types</p>
+							<div class="char-type">
+								<div>
+									<label for="uppercase" class="form-control">
+										<input type="checkbox" id="uppercase" name="uppercase" class="checkbox-default" checked>
+										Uppercase (A-Z)
+									</label>
+								</div>
+								<div>
+									<label for="lowercase" class="form-control">
+										<input type="checkbox" id="lowercase" name="lowercase" checked>
+										Lowercase (a-z)
+									</label>
+								</div>
+								<div>
+									<label for="numbers" class="form-control">
+										<input type="checkbox" id="numbers" name="numbers" checked>
+										Numbers (0-9)
+									</label>
+								</div>
+								<div>
+									<label for="symbols" class="form-control">
+										<input type="checkbox" id="symbols" name="symbols" checked>
+										Symbols (!@#...)
+									</label>
+								</div>
+							</div>
+						</div>
+						<!--PreFix Mode view-->
+						<div data-mode="prefix" id="view-prefix">
+							<div class="help-text">
+								<div class="item">
+									<span class="font-weight-500">U</span>
+									<span>Uppercase Letter</span>
+								</div>
+								<div class="item">
+									<span class="font-weight-500">L</span>
+									<span>Lowercase Letter</span>
+								</div>
+								<div class="item">
+									<span class="font-weight-500">S</span>
+									<span>Symbol</span>
+								</div>
+								<div class="item">
+									<span class="font-weight-500">N</span>
+									<span>Number</span>
+								</div>
+								<div class="item row-bottom">
+									<span class="font-weight-500">'Character'</span>
+									<span>Specific Character</span>
+								</div>
+							</div>
+							<div class="prefix-input">
+								<input type="text" id="prefix-input" name="prefix-input"
+									placeholder="Example: UUSNN'!' -> LV&53!">
+							</div>
+<!--							<p class="example-text">UUSNN'!' -> LV&53!</p>-->
+						</div>
+						<button class="generate-button">
+							<img src="icon/icons8-reload-24%20(1).png" class="icon reload-icon">
+							Generate Password
+						</button>
+					</form>
+				</div>
+			</div>
+			<div class="output">
+				<p>Generated Password</p>
+				<div class="password-output-copy">
+					<input type="text" id="password-output" name="password-output">
+					<button class="copy-button"><img src="icon/icons8-copy-24%20(1).png" class="icon-copy"></button>
+				</div>
+				<div class="safe-level"></div>
+				<button
+					class="breach-button">Check for Breaches via. <span class="span-link">haveibeenpwned.com</span>
+				</button>
+			</div>
+		</div>
+	</section>
+</main>
+</body>
+</html>

@@ -1,0 +1,375 @@
+@import "main.css";
+
+/* --- style range slider --- */
+input[type=range] {
+    -webkit-appearance: none;
+    background: transparent;
+    width: 100%;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: var(--bg-white);
+    border-radius: 50%;
+    border: 1px solid var(--border-black);
+    cursor: pointer;
+    height: 16px;
+    margin-top: -5px;
+    transition: box-shadow .15s;
+    width: 16px;
+}
+
+input[type=range]:hover::-webkit-slider-thumb {
+    box-shadow: 0 0 0 4px var(--shadow-black-01);
+}
+
+input[type=range]::-moz-range-thumb {
+    background-color: var(--bg-white);
+    border-radius: 50%;
+    border: 1px solid var(--border-black);
+    cursor: pointer;
+    height: 16px;
+    width: 16px;
+}
+
+input[type=range]::-ms-thumb {
+    background-color: var(--bg-white);
+    border-radius: 50%;
+    border: 1px solid var(--border-black);
+    cursor: pointer;
+    height: 16px;
+    width: 16px;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    background-color: var(--bg-black);
+    border-radius: 10px;
+    cursor: pointer;
+    height: 5px;
+    width: 100%;
+}
+
+input[type=range]::-moz-range-track {
+    background-color: var(--bg-black);
+    border-radius: 10px;
+    cursor: pointer;
+    height: 5px;
+    width: 100%;
+}
+input[type=range]::-ms-track {
+    background-color: transparent;
+    border-radius: 10px;
+    color: transparent;
+    cursor: pointer;
+    height: 5px;
+    width: 100%;
+}
+
+input[type=range]::-ms-fill-lower {
+    background-color: var(--bg-black);
+    border-radius: 10px;
+}
+
+input[type=range]::-ms-fill-upper {
+    background-color: var(--bg-black);
+    border-radius: 10px;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+/* --- Style Checkbox --- */
+.form-control {
+    align-items: center;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 1rem;
+    gap: .5rem;
+}
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: var(--bg-off-white);
+    block-size: 1em;
+    border-radius: .15em;
+    border: 1px solid var(--border-black-01);
+    color: currentColor;
+    display: inline-block;
+    font: inherit;
+    height: 1em;
+    inline-size: 1em;
+    margin: 0;
+    position: relative;
+    transition: background-color .1s;
+    vertical-align: middle;
+    width: 1em;
+}
+
+input[type="checkbox"]::before {
+    background-color: var(--bg-white);
+    clip-path: polygon(24.52% 55.96%, 20.67% 62.02%, 45% 77.5%, 80% 25%, 74.83% 21.55%, 43.74% 68.19%);
+    content: "";
+    height: 1em;
+    inset: 0;
+    position: absolute;
+    transform: scale(0);
+    transition: transform .1s;
+    width: 1em;
+}
+
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--bg-black);
+}
+
+
+/* --- Style Password Chooser ---*/
+.segmented {
+    border: none;
+    margin: 0 0 1.5rem 0;
+    padding: 0;
+}
+
+.segmented legend{
+    padding: 1rem;
+}
+
+.segmented-wrap {
+    background-color: var(--bg-off-white);
+    border-radius: 15px;
+    display: inline-flex;
+    justify-content: space-between;
+    overflow: clip;
+    width: 60%;
+
+}
+
+.segmented input[type="radio"]{
+    opacity: 0;
+    position: absolute;
+}
+
+.segmented label {
+    align-items: center;
+    background: transparent;
+    cursor: pointer;
+    display: inline-flex;
+    gap: .5rem;
+    justify-content: center;
+    line-height: 1;
+    padding: .65rem 1rem;
+    transition: box-shadow .15s, background-color .15s, transform .15s;
+    user-select: none;
+    width: 100%;
+}
+
+.segmented label:hover {
+    background-color: rgba(189, 202, 231, 0.3);
+}
+
+.segmented label:active {
+    transform: translateY(1px);
+}
+
+#type-random:checked + label,
+#type-prefix:checked + label {
+    background-color: var(--bg-blue-grey);
+}
+
+.icon {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+}
+
+.icon img {
+    height: 100%;
+    object-fit: contain;
+    width: 100%;
+}
+
+/* --- Style generate password button*/
+.generate-button {
+    align-items: center;
+    background-color: var(--bg-blue);
+    border-radius: 15px;
+    border: 1px solid var(--bg-blue);
+    color: var(--tc-white);
+    cursor: pointer;
+    display: flex;
+    font-size: 14px;
+    justify-content: center;
+    margin: 0 auto;
+    padding: .7rem 0;
+    width: 90%;
+}
+
+.generate-button:hover {
+    background-color: rgb(54, 101, 175);
+}
+
+.reload-icon {
+margin-right: 1rem;
+}
+
+/* --- Style Random Password ---*/
+.length-container {
+    align-items: center;
+    border-bottom: 1px solid var(--border-black-02);
+    border-top: 1px solid var(--border-black-02);
+    display: flex;
+    font-weight: var(--fw-300);
+    justify-content: space-between;
+    padding: 1.5rem .5rem 1.5rem 0;
+}
+
+.len-output {
+    background-color: var(--bg-light-grey);
+    border-radius: 15px;
+    padding: .5rem 1rem;
+    width: 55px;
+}
+
+.slider {
+    width: 250px
+}
+
+.char-type {
+    border-bottom: 1px solid var(--border-black-02);
+    column-gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: start;
+    margin-bottom: 2em;
+    padding-bottom: 1.5rem;
+    row-gap: .5rem;
+}
+
+/* --- Style Prefix Password --- */
+.prefix-input input {
+    background-color: var(--bg-light-grey);
+    border-radius: 10px;
+    border: 1px solid var(--border-black-01);
+    height: 35px;
+    margin: 1rem 0 1.5rem 0;
+    padding: 5px 12px;
+    text-align: center;
+    width: 100%;
+}
+
+.help-text {
+    border-bottom: 1px solid var(--border-black-02);
+    border-top: 1px solid var(--border-black-02);
+    column-gap: 25px;
+    display: grid;
+    font-size: .9rem;
+    /*font-weight: 300;*/
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto auto;
+    margin: .25rem auto;
+    padding: 1.5rem 0;
+    row-gap: 10px;
+}
+
+.item {
+    background: var(--bg-white);
+    border-radius: 5px;
+    border: 1px solid var(--border-black-01);
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem 1rem;
+    text-align: center;
+}
+
+.row-bottom {
+    background: var(--bg-white);
+    grid-column: 1 / -1;
+    justify-content: center;
+}
+
+.row-bottom span {
+    margin: 0 .5rem;
+}
+
+#prefix-input {
+    font-family: var(--ff-example);
+}
+
+/* --- Style Password Output --- */
+.output {
+    background-color: var(--bg-off-white);
+    border-radius: 2px 2px 15px 15px;
+    box-shadow: 0 8px 16px var(--shadow-black-01);
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+.output p {
+    color: var(--tc-blue);
+    margin-bottom: .5rem;
+}
+
+.safe-level {
+    background-color: var(--bg-green);
+    height: 10px;
+    margin-bottom: 1rem;
+    width: 0;
+    transition: width .25s;
+}
+
+.password-output-copy {
+    display: flex;
+    justify-content: space-between;
+}
+
+.password-output-copy input {
+    background-color: var(--bg-light-grey);
+    border-radius: 10px;
+    border: 1px solid var(--border-black-01);
+    flex: 1;
+    height: 35px;
+    margin-right: 1rem;
+    padding: 5px 12px;
+}
+
+.password-output-copy button {
+    background-color: var(--bg-white);
+    border-radius: 10px;
+    border: 1px solid var(--border-black-01);
+    height: 35px;
+    transition: transform .15s;
+    width: 35px;
+}
+
+.password-output-copy button:active > .icon-copy{
+    transform: translateY(1px);
+}
+
+.icon-copy {
+    height: 20px;
+    object-position: center;
+    width: 20px;
+}
+
+.breach-button {
+    background-color: var(--bg-white);
+    border-radius: 10px;
+    border: 1px solid var(--border-black-01);
+    color: var(--tc-light-grey);
+    flex: 1;
+    font-family: var(--ff-base);
+    font-size: .9rem;
+    font-weight: var(--fw-300);
+    height: 25px;
+    padding: 5px 12px;
+    cursor: pointer;
+}
+
+/* --- Style Breach Button --- */
