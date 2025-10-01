@@ -32,12 +32,12 @@ body {
     background-color: var(--bg-blue-white);
     font-family: var(--ff-base), sans-serif;
     margin: 0;
-    padding: 15px;
+    padding: .95rem;
 }
 
 /* --- Typography --- */
 
-h1 {font-size: 40px}
+h1 {font-size: 2rem}
 h4 {}
 a { text-decoration: none; }
 
@@ -67,7 +67,7 @@ a { text-decoration: none; }
 }
 
 .generator-container {
-    margin-top: 25px;
+    margin-top: 1.65rem;
 }
 
 .settings {
