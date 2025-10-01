@@ -2,7 +2,8 @@
     /* colors */
     --bg-blue-white: #E7EEFF;
     --bg-green: #09a409;
-    --bg-light-grey: #f0f0f1;
+    --bg-light-grey: #F2F3F7;
+    --bg-light-grey-2: #f6f6f6;
     --bg-off-white: #FAFCFF;
     --bg-white: #ffffff;
     --bg-black: #000000;
@@ -32,7 +33,12 @@ body {
     background-color: var(--bg-blue-white);
     font-family: var(--ff-base), sans-serif;
     margin: 0;
-    padding: .95rem;
+    padding: 1.5rem;
+}
+
+footer {
+    margin-top: 1rem;
+    text-align: center;
 }
 
 /* --- Typography --- */
@@ -62,7 +68,7 @@ a { text-decoration: none; }
 
 .container {
     margin: 0 auto;
-    max-width: 550px;
+    /*max-width: 550px;*/
     text-align: center;
 }
 
@@ -78,5 +84,6 @@ a { text-decoration: none; }
 }
 
 .settings-form {
-    margin-bottom: 1rem;
+    font-size: 1rem;
+    margin-bottom: 1em;
 }

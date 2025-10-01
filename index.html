@@ -11,14 +11,17 @@
 	<link rel="stylesheet" href="styles/main.css">
 	<link rel="stylesheet" href="styles/components.css">
 	<script defer src="app.js"></script>
+	<script defer src="random-password-generator.js"></script>
 	<title>Title</title>
 </head>
 <body>
 <main>
-	<section class="container">
-		<h1>Random Password Generator <br> by Noel</h1>
-		<span class="sub-heading">Generate strong and secure passwords
+	<section class="container hero-container-grid">
+		<div class="hero">
+			<h1>Random Password Generator <br> by Noel</h1>
+			<span class="sub-heading">Generate strong and secure passwords
 			<br> instantly and check for leaks</span>
+		</div>
 		<div class="generator-container">
 			<div class="settings">
 				<fieldset  class="segmented">
@@ -28,15 +31,15 @@
 						<input type="radio" name="pwtype" id="type-random" value="random" checked>
 						<label for="type-random"><span class="icon"><img src="icon/icons8-random-48.png" alt="random"></span>Random</label>
 						<!--PREFIX-->
-						<input type="radio" name="pwtype" id="type-prefix" value="prefix" >
+						<input type="radio" name="pwtype" id="type-prefix" value="prefix">
 						<label for="type-prefix"><span class="icon"><img src="icon/icons8-hashtag-50.png" alt="Prefix"></span>Prefix</label>
 					</div>
 				</fieldset>
+				<p class="align-left">Customize your new password</p>
 				<div class="settings-form">
-					<p class="align-left">Customize your new password</p>
 					<form>
 						<!--Random Mode view-->
-						<div data-mode="random" id="view-random" aria-hidden="false">
+						<div data-mode="random" id="view-random">
 							<div class="length-container">
 								<label for="length">Password Length</label>
 								<div class="slider">
@@ -101,13 +104,13 @@
 								</div>
 							</div>
 							<div class="prefix-input">
-								<input type="text" id="prefix-input" name="prefix-input"
-									placeholder="Example: UUSNN'!' -> LV&53!">
+								<label for="prefix-input"></label><input id="prefix-input" name="prefix-input" placeholder="Example: UUSNN'!' -> LV&53!"
+									type="text">
 							</div>
 <!--							<p class="example-text">UUSNN'!' -> LV&53!</p>-->
 						</div>
-						<button class="generate-button">
-							<img src="icon/icons8-reload-24%20(1).png" class="icon reload-icon">
+						<button type="button" class="generate-button">
+							<img src="icon/icons8-reload-24%20(1).png" class="icon reload-icon" alt="reload">
 							Generate Password
 						</button>
 					</form>
@@ -116,10 +119,15 @@
 			<div class="output">
 				<p>Generated Password</p>
 				<div class="password-output-copy">
-					<input type="text" id="password-output" name="password-output">
-					<button class="copy-button"><img src="icon/icons8-copy-24%20(1).png" class="icon-copy"></button>
+					<label for="password-output"></label><input type="text" id="password-output"
+					name="password-output" readonly>
+					<button class="copy-button"><img src="icon/icons8-copy-24%20(1).png" class="icon-copy"
+						alt="copy"
+					></button>
 				</div>
-				<div class="safe-level"></div>
+				<div class="safe-level-container">
+					<div class="safe-level" id="safe-level"></div>
+				</div>
 				<button
 					class="breach-button">Check for Breaches via. <span class="span-link">haveibeenpwned.com</span>
 				</button>
@@ -127,5 +135,6 @@
 		</div>
 	</section>
 </main>
+<footer><small>&copy; 2025 Noel Bromkamp</small></footer>
 </body>
 </html>
