@@ -109,7 +109,7 @@
 							</div>
 <!--							<p class="example-text">UUSNN'!' -> LV&53!</p>-->
 						</div>
-						<button type="button" class="generate-button">
+						<button type="button" class="generate-button" onclick="displayPassword()">
 							<img src="icon/icons8-reload-24%20(1).png" class="icon reload-icon" alt="reload">
 							Generate Password
 						</button>
@@ -121,7 +121,9 @@
 				<div class="password-output-copy">
 					<label for="password-output"></label><input type="text" id="password-output"
 					name="password-output" readonly>
-					<button class="copy-button"><img src="icon/icons8-copy-24%20(1).png" class="icon-copy"
+					<button class="copy-button" onclick="copyFunction()" id="copy-button"><img
+						src="icon/icons8-copy-24%20(1).png"
+						class="icon-copy"
 						alt="copy"
 					></button>
 				</div>
@@ -129,7 +131,9 @@
 					<div class="safe-level" id="safe-level"></div>
 				</div>
 				<button
-					class="breach-button">Check for Breaches via. <span class="span-link">haveibeenpwned.com</span>
+					class="breach-button" id="breach-button">Check for Breaches via. <span class="span-link"
+					id="breach-text">haveibeenpwned
+				                                                                           .com</span>
 				</button>
 			</div>
 		</div>
