@@ -1,16 +1,18 @@
 const generateButton = document.querySelector('.generate-button');
 const passwordOutput = document.getElementById('password-output');
 const safeLevel = document.getElementById('safe-level');
-const lengthInput = document.getElementById('lenOutput');
+const lengthInput = document.getElementById('len');
 const uppercaseCheckbox = document.getElementById("uppercase");
 const lowercaseCheckbox = document.getElementById("lowercase");
 const numbersCheckbox = document.getElementById("numbers");
 const symbolsCheckbox = document.getElementById('symbols');
-const copyButton = document.getElementById("copy-button")
+const originalText = breachButton.innerHTML;
 const UPPERCASE = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const LOWERCASE = 'abcdefghijklmnopqrstuvwxyz';
 const NUMBERS = '0123456789';
 const SYMBOLS = '!@#$%^&*()_+-=[]{}|;:,.<>?';
+
+
 
 function generateRandomPassword() {
     let lengthPass = parseInt(lengthInput.value);
@@ -37,10 +39,10 @@ function generateRandomPassword() {
 }
 
 function generatePatternPassword(pattern) {
-    let lenPattern = pattern.length;
+    let lengthPattern = pattern.length;
     let password = "";
 
-    for (let i = 0; i < lenPattern; i++) {
+    for (let i = 0; i < lengthPattern; i++) {
         let patternChar = pattern[i];
 
         if (patternChar === 'U') {
@@ -92,12 +94,16 @@ function displayPassword() {
     if (passType === 'random') {
         password = generateRandomPassword()
     }
-    else if (passType === 'prefix') {
-        let pattern = document.getElementById("prefix-input").value;
+    else if (passType === 'pattern') {
+        let pattern = document.getElementById("pattern-input").value;
         password = generatePatternPassword(pattern);
     }
 
-    copyButton.style.boxShadow = 'none';
     passwordOutput.value = password;
     updatePasswordStrength(password);
+
+    copyButton.classList.remove('copy-success');
+    breachButton.innerHTML = originalText;
+    breachButton.classList.remove("breach-button-found");
+    breachButton.classList.remove("breach-button-not-found");
 }
