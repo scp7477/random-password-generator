@@ -4,23 +4,23 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="Noel Bromkamp">
-	<meta name="description" content="Random Password Generator">
+	<meta name="description" content="A simple random password generator website">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Inconsolata:wght@200..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=VT323&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="styles/main.css">
 	<link rel="stylesheet" href="styles/components.css">
-	<script defer src="app.js"></script>
-	<script defer src="random-password-generator.js"></script>
+	<link rel="icon" href="icons/icons8-password-16.png" type="image/x-icon">
+	<script defer src="scripts/app.js"></script>
 	<title>Random Password Generator</title>
 </head>
 <body>
 <main>
 	<section class="container hero-container-grid">
 		<div class="hero">
-			<h1>Random Password Generator <br> by Noel</h1>
+			<h1>Random Password Generator</h1>
 			<span class="sub-heading">Generate strong and secure passwords
-			<br> instantly and check for leaks</span>
+			<br>and check for leaks</span>
 		</div>
 		<div class="generator-container">
 			<div class="settings">
@@ -29,15 +29,17 @@
 					<div class="segmented-wrap">
 						<!--RANDOM-->
 						<input type="radio" name="pwtype" id="type-random" value="random" checked>
-						<label for="type-random"><span class="icon"><img src="icon/icons8-random-48.png" alt="random"></span>Random</label>
-						<!--PREFIX-->
-						<input type="radio" name="pwtype" id="type-prefix" value="prefix">
-						<label for="type-prefix"><span class="icon"><img src="icon/icons8-hashtag-50.png" alt="Prefix"></span>Prefix</label>
+						<label for="type-random"><span class="icon"><img src="icons/icons8-random-48.png"
+							alt="Random password type"></span>Random</label>
+						<!--PATTERN-->
+						<input type="radio" name="pwtype" id="type-pattern" value="pattern">
+						<label for="type-pattern"><span class="icon"><img src="icons/icons8-hashtag-50.png"
+							alt="Pattern password type"></span>Pattern</label>
 					</div>
 				</fieldset>
 				<p class="align-left">Customize your new password</p>
 				<div class="settings-form">
-					<form>
+					<form autocomplete="off">
 						<!--Random Mode view-->
 						<div data-mode="random" id="view-random">
 							<div class="length-container">
@@ -45,13 +47,13 @@
 								<div class="slider">
 									<input type="range" id="length" name="length" min="4" max="40"
 										value="10"
-										oninput="lenOutput.value = this.value">
+										oninput="len.value = this.value">
 								</div>
 								<div class="len-output">
-									<output id="lenOutput">10</output>
+									<output id="len">10</output>
 								</div>
 							</div>
-							<p class="align-left weight300">Character Types</p>
+							<p class="align-left light-text">Character Types</p>
 							<div class="char-type">
 								<div>
 									<label for="uppercase" class="form-control">
@@ -79,61 +81,63 @@
 								</div>
 							</div>
 						</div>
-						<!--PreFix Mode view-->
-						<div data-mode="prefix" id="view-prefix">
+						<!--Pattern Mode view-->
+						<div data-mode="pattern" id="view-pattern">
 							<div class="help-text">
 								<div class="item">
-									<span class="font-weight-500">U</span>
+									<span>U</span>
 									<span>Uppercase Letter</span>
 								</div>
 								<div class="item">
-									<span class="font-weight-500">L</span>
+									<span>L</span>
 									<span>Lowercase Letter</span>
 								</div>
 								<div class="item">
-									<span class="font-weight-500">S</span>
+									<span>S</span>
 									<span>Symbol</span>
 								</div>
 								<div class="item">
-									<span class="font-weight-500">N</span>
+									<span>N</span>
 									<span>Number</span>
 								</div>
 								<div class="item row-bottom">
-									<span class="font-weight-500">'Character'</span>
-									<span>Specific Character</span>
+									<span>'Char' </span>
+									<span>Custom Character</span>
 								</div>
 							</div>
-							<div class="prefix-input">
-								<label for="prefix-input"></label><input id="prefix-input" name="prefix-input" placeholder="Example: UUSNN'!' -> LV&53!"
+							<div class="pattern-input">
+								<label for="pattern-input"></label><input
+								id="pattern-input" name="pattern-input"
+								placeholder="Example: UUSNN'!' -> LV&53!"
 									type="text">
 							</div>
-<!--							<p class="example-text">UUSNN'!' -> LV&53!</p>-->
 						</div>
 						<button type="button" class="generate-button" onclick="displayPassword()">
-							<img src="icon/icons8-reload-24%20(1).png" class="icon reload-icon" alt="reload">
+							<img src="icons/icons8-reload-24%20(1).png" class="icon reload-icon"
+								alt="Generate password">
 							Generate Password
 						</button>
 					</form>
 				</div>
 			</div>
 			<div class="output">
-				<p>Generated Password</p>
+				<p class="highlight-text-blue">Generated Password</p>
 				<div class="password-output-copy">
-					<label for="password-output"></label><input type="text" id="password-output"
+					<input type="text" id="password-output"
 					name="password-output" readonly>
 					<button class="copy-button" onclick="copyFunction()" id="copy-button"><img
-						src="icon/icons8-copy-24%20(1).png"
+						src="icons/icons8-copy-24%20(1).png"
 						class="icon-copy"
-						alt="copy"
+						alt="Copy password"
 					></button>
 				</div>
 				<div class="safe-level-container">
 					<div class="safe-level" id="safe-level"></div>
 				</div>
 				<button
-					class="breach-button" id="breach-button">Check for Breaches via. <span class="span-link"
-					id="breach-text">haveibeenpwned
-				                                                                           .com</span>
+					class="breach-button" id="breach-button" onclick="checkPassword()">Check for password breaches
+				                                                                       using <br>
+					<span class="highlight-text" id="breach-text">haveibeenpwned.com</span>
 				</button>
 			</div>
 		</div>

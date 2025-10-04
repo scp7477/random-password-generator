@@ -43,21 +43,21 @@ footer {
 
 /* --- Typography --- */
 
-h1 {font-size: 2rem}
-h4 {}
-a { text-decoration: none; }
+h1 {
+    font-size: 2rem
+}
+a {
+    text-decoration: none;
+}
 
-.weight300, .sub-heading {
+.light-text, .sub-heading {
     font-weight: var(--fw-300);
 }
 
-.font-weight-500 {
-    font-weight: var(--fw-500);
-}
-
-.span-link{
+.highlight-text{
     color: var(--tc-light-red);
     font-weight: var(--fw-500);
+    white-space: nowrap;
 }
 
 .align-left {
@@ -68,7 +68,6 @@ a { text-decoration: none; }
 
 .container {
     margin: 0 auto;
-    /*max-width: 550px;*/
     text-align: center;
 }
 

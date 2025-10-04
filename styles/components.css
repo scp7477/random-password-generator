@@ -139,7 +139,7 @@ input[type="checkbox"]:checked {
     max-inline-size: 25rem;
     min-inline-size: 16rem;
     min-width: 250px;
-    overflow: clip;
+    overflow: hidden;
     width: 100%;
 }
 
@@ -172,7 +172,7 @@ input[type="checkbox"]:checked {
 }
 
 #type-random:checked + label,
-#type-prefix:checked + label {
+#type-pattern:checked + label {
     background-color: var(--bg-blue-grey);
 }
 
@@ -258,12 +258,13 @@ input[type="checkbox"]:checked {
     gap: .5em;
 }
 
-/* --- Style Prefix Password --- */
-.prefix-input input {
+/* --- Style Pattern Password --- */
+.pattern-input input {
     background-color: var(--bg-light-grey);
     border-radius: 10px;
     border: 1px solid var(--border-black-01);
     height: 35px;
+    font-size: 16px;
     margin: 1em 0 1.5em 0;
     padding: 5px 12px;
     text-align: center;
@@ -271,7 +272,7 @@ input[type="checkbox"]:checked {
     transition: border .15s, box-shadow .15s;
 }
 
-.prefix-input input:focus {
+.pattern-input input:focus {
     outline: none;
     border: 1px solid var(--border-black-02);
     box-shadow: 0 0 1px 3px var(--shadow-black-01);
@@ -311,7 +312,7 @@ input[type="checkbox"]:checked {
     /*margin: 0 .5rem;*/
 }
 
-#prefix-input {
+#pattern-input {
     font-family: var(--ff-example), serif;
 }
 
@@ -327,7 +328,7 @@ input[type="checkbox"]:checked {
     padding: 1em;
 }
 
-.output p {
+.highlight-text-blue {
     color: var(--tc-blue);
     margin: .5em 0 1.5em 0;
 }
@@ -365,13 +366,22 @@ input[type="checkbox"]:checked {
     text-overflow: ellipsis;
 }
 
+.password-output-copy input:focus {
+    outline: none;
+}
+
 .password-output-copy button {
     background-color: var(--bg-white);
     border-radius: 10px;
     border: 1px solid var(--border-black-01);
     height: 35px;
+    transition: border .15s, transform .15s;
     width: 35px;
-    transition: box-shadow .15s, transform .15s;
+}
+
+.copy-button.copy-success {
+    border-color: rgb(139, 179, 129);
+    box-shadow: 0 0 0 3px rgba(139,179,129,.35);
 }
 
 .password-output-copy button:active > .icon-copy{
@@ -400,8 +410,18 @@ input[type="checkbox"]:checked {
     padding: .35em .83em;
 }
 
+.breach-button-found {
+    background-color: #FFF3F2;
+    color: #C35C64;
+}
+.breach-button-not-found {
+    background-color: #F0FCF5;
+    color: #559A74;
+}
+
+
 .breach-button:hover {
-    background-color: var(--bg-light-grey-2);
+    /*background-color: var(--bg-light-grey-2);*/
 }
 
 /* --- Layout for Hero + Generator (800px+) --- */
@@ -414,9 +434,10 @@ input[type="checkbox"]:checked {
     }
 
     .hero-container-grid {
-        height: 100vh;
+        /*height: 100vh;*/
         margin: 0 auto;
         max-width: 1100px;
+        min-height: 750px;
     }
 
     .hero-container-grid {
@@ -448,4 +469,35 @@ input[type="checkbox"]:checked {
         place-items: center;
     }
 
+    .row-bottom {
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 360px) {
+    .password-output-copy {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .password-output-copy input {
+        width: 100%;
+        margin: 0 0 .5em 0;
+    }
+
+    .password-output-copy button {
+        width: 100%;
+    }
+
+    .segmented-wrap {
+        flex-direction: column;
+        max-width: 100%;
+        min-inline-size: 0;
+        min-width: 0;
+        width: 100%;
+    }
+
+    .segmented label {
+        width: 100%;
+    }
 }
