@@ -112,24 +112,37 @@ function generatePatternPassword(pattern) {
 }
 
 function updatePasswordStrength(password) {
-    if (password.length <= 3) {
-        safeLevel.style.width = '0%'
+    const result = zxcvbn(password, []);
+    const score = result.score;
+    console.log(score);
+    console.log(result.guesses);
+    let width = '0%';
+    let color = '#ccc';
+    switch (score) {
+        case 0:
+            width = '20%';
+            color = '#EF4444';
+            break;
+        case 1:
+            width = '40%';
+            color = '#f97c16';
+            break;
+        case 2:
+            width = '60%';
+            color = '#f5d60b';
+            break;
+        case 3:
+            width = '80%';
+            color = '#09a409';
+            break;
+        case 4:
+            width = '100%';
+            color = '#066206';
+            break;
     }
-    if (password.length >= 4) {
-        safeLevel.style.width = '25%'
-        safeLevel.style.backgroundColor = '#ec9393'
-    }
-    if (password.length >= 7) {
-        safeLevel.style.width = '50%'
-        safeLevel.style.backgroundColor = '#ffcc00'
-    }
-    if (password.length >= 9) {
-        safeLevel.style.width = '75%'
-        safeLevel.style.backgroundColor = '#09a409'
-    }    if (password.length >= 12) {
-        safeLevel.style.width = '100%'
-        safeLevel.style.backgroundColor = '#066206'
-    }
+
+    safeLevel.style.width = width;
+    safeLevel.style.backgroundColor = color;
 }
 
 async function sha1 (text) {
