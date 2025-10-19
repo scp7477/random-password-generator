@@ -12,7 +12,7 @@
     --border-black-01: rgba(0, 0, 0, 0.1);
     --border-black: #000000;
     --border-black-02: rgba(0, 0, 0, 0.2);
-    --shadow-black-01 : rgba(0,0,0,0.1);
+    --shadow-black-01: rgba(0, 0, 0, 0.1);
     --tc-blue: #3665AFFF;
     --tc-white: #ffffff;
     --tc-light-grey: #9a9a9a;
@@ -27,16 +27,20 @@
     --fw-500: 500;
 }
 
-* {box-sizing: border-box}
+* {
+    box-sizing: border-box
+}
 
 body {
     background-color: var(--bg-blue-white);
     font-family: var(--ff-base), sans-serif;
     margin: 0;
     padding: 1.5rem;
+    height: 100vh;
 }
 
 footer {
+    padding: 10px;
     margin-top: 1rem;
     text-align: center;
 }
@@ -46,6 +50,7 @@ footer {
 h1 {
     font-size: 2rem
 }
+
 a {
     text-decoration: none;
 }
@@ -54,7 +59,7 @@ a {
     font-weight: var(--fw-300);
 }
 
-.highlight-text{
+.highlight-text {
     color: var(--tc-light-red);
     font-weight: var(--fw-500);
     white-space: nowrap;

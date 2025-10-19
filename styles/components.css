@@ -56,6 +56,7 @@ input[type=range]::-moz-range-track {
     height: 5px;
     width: 100%;
 }
+
 input[type=range]::-ms-track {
     background-color: transparent;
     border-radius: 10px;
@@ -127,7 +128,7 @@ input[type="checkbox"]:checked {
     padding: 0;
 }
 
-.segmented legend{
+.segmented legend {
     padding: 1rem;
 }
 
@@ -143,7 +144,7 @@ input[type="checkbox"]:checked {
     width: 100%;
 }
 
-.segmented input[type="radio"]{
+.segmented input[type="radio"] {
     opacity: 0;
     position: absolute;
 }
@@ -381,10 +382,10 @@ input[type="checkbox"]:checked {
 
 .copy-button.copy-success {
     border-color: rgb(139, 179, 129);
-    box-shadow: 0 0 0 3px rgba(139,179,129,.35);
+    box-shadow: 0 0 0 3px rgba(139, 179, 129, .35);
 }
 
-.password-output-copy button:active > .icon-copy{
+.password-output-copy button:active > .icon-copy {
     transform: translateY(1px);
 }
 
@@ -414,9 +415,16 @@ input[type="checkbox"]:checked {
     background-color: #FFF3F2;
     color: #C35C64;
 }
+
 .breach-button-not-found {
     background-color: #F0FCF5;
     color: #559A74;
+}
+
+.made-by-text {
+    margin-top: 15px;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.5);
 }
 
 
@@ -427,6 +435,12 @@ input[type="checkbox"]:checked {
 /* --- Layout for Hero + Generator (800px+) --- */
 
 @media (min-width: 800px) {
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
     .settings-form [data-mode] {
         min-width: 410px;
@@ -453,6 +467,7 @@ input[type="checkbox"]:checked {
         font-size: 3.5rem;
         width: 100%;
     }
+
     .hero h1 br {
         display: none;
     }
