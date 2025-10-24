@@ -2,7 +2,7 @@
 
 A simple web app to generate secure passwords and check for breaches.
 
-**👉 Try it here:** https://scp7477.github.io/random-password-generator/
+**👉 Try it here:** https://noelbrm.github.io/random-password-generator
 
 ---
 
